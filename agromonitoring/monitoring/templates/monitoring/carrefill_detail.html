@@ -1,0 +1,19 @@
+{% extends 'monitoring/base.html' %}
+
+
+{% block main %}
+
+<div class="card" style="width: 98%;">
+    <div class="card-body">
+    <h5 class="card-title text-success">Дата: {{ object.date_of_fuel }} - Машина: {{ object.cars }} </h5>
+      <h6 class="card-subtitle">Назва: {{ object.fuel_station }}</h6>
+      <p class="card-text">Машина: {{ object.cars }}</p>
+      <p class="card-text">Водій: {{ object.driver }}</p>
+      <p class="card-text">Було заправлено: {{ object.fillin_volume }}</p>
+      <p class="card-text">Дата і час заправки: {{ object.date_of_fuel }}</p>
+      <p class="card-text">Опис: {{ object.description }}</p>
+     </div>
+</div>
+   
+
+{% endblock %}

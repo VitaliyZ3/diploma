@@ -1,0 +1,12 @@
+{% extends 'monitoring/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+<div class="col-sm-12 col-md-8 col-md-offset-2 col-lg-6" >
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Save" class="btn btn-primary">
+</form>
+</div>
+{% endblock %}

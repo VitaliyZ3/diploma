@@ -1,0 +1,21 @@
+{% extends 'monitoring/base.html' %}
+
+
+{% block main %}
+
+<div class="card" style="width: 98%;">
+    <div class="card-body">
+      <h5 class="card-title text-success">Дата {{ object.date_of_supply }} - Инвентарный номер {{ object.invent_number }} - Склад {{ object.warehouse }} </h5>
+      <h6 class="card-subtitle">Название: {{ object.name }}</h6>
+      <p class="card-text">Инвентарный номер: {{ object.invent_number }}</p>
+      <p class="card-text">Количество: {{ object.number }}</p>
+      <p class="card-text">Машина для использования: {{ object.car_for_using }}</p>
+      <p class="card-text">Дата поступления: {{ object.date_of_supply }}</p>
+      <p class="card-text">Исполнитель работ: {{ object.contactor }}</p>
+      <p class="card-text">Статус: {{ object.status }}</p>
+      <p class="card-text">Описание: {{ object.description }}</p>
+     </div>
+</div>
+   
+
+{% endblock %}

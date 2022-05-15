@@ -1,0 +1,121 @@
+{% extends 'monitoring/base.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+{% load auth_extras %}
+<!-- Fuel -->
+{% if request.user|has_group:"Fuel Member" %}  
+<div class="col">
+  <div
+    class="dropdown-menu pt-0 mx-0 rounded-3 shadow overflow-hidden"
+    style="width: 100%; margin-bottom: 0%;"
+  >
+    <form class="p-2 mb-2 bg-light border-bottom" class="card-headers">
+      <h5 class="header">Топливо</h5>
+    </form>
+    <ul class="list-unstyled mb-0">
+      <li>
+        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{% url 'create-fuel_station_refill' %}">
+          <span
+            class="d-inline-block bg-success rounded-circle"
+            style="width: 0.5em; height: 0.5em"
+          ></span>
+          Пополнение топливом АЗС
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{% url 'create-car_refill' %}" >
+          <span
+            class="d-inline-block bg-primary rounded-circle"
+            style="width: 0.5em; height: 0.5em"
+          ></span>
+          Заправка транспотра
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{% url 'list-fuel_station_refill' %}">
+          <span
+            class="d-inline-block bg-danger rounded-circle"
+            style="width: 0.5em; height: 0.5em"
+          ></span>
+          Просмотр пополнения АЗС
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{% url 'list-car_refill' %}" >
+          <span
+            class="d-inline-block bg-info rounded-circle"
+            style="width: 0.5em; height: 0.5em"
+          ></span>
+          Просмотр заправок транспорта
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endif %}
+<!-- Details -->
+{% if request.user|has_group:"Autoparts Member"  %}  
+
+  <div class="col">
+    <div
+      class="dropdown-menu pt-0 mx-0 rounded-3 shadow overflow-hidden"
+      style="width: 100%;"
+    >
+      <form class="p-2 mb-2 bg-light border-bottom" class="card-headers">
+        <h5 class="header">Детали</h5>
+      </form>
+      <ul class="list-unstyled mb-0">
+        <li>
+          <a
+            class="dropdown-item d-flex align-items-center gap-2 py-2"
+            href="{% url 'create-autopart' %}"
+          >
+            <span
+              class="d-inline-block bg-success rounded-circle"
+              style="width: 0.5em; height: 0.5em"
+            ></span>
+            Поступление детали на склад
+          </a>
+        </li>
+        <li>
+          <a
+            class="dropdown-item d-flex align-items-center gap-2 py-2"
+            href="{% url 'list-autopart-off' %}"
+          >
+            <span
+              class="d-inline-block bg-primary rounded-circle"
+              style="width: 0.5em; height: 0.5em"
+            ></span>
+            Списание детали со склада
+          </a>
+        </li>
+        <li>
+          <a
+            class="dropdown-item d-flex align-items-center gap-2 py-2"
+            href="#"
+          >
+            <span
+              class="d-inline-block bg-danger rounded-circle"
+              style="width: 0.5em; height: 0.5em"
+            ></span>
+            Возврат детали
+          </a>
+        </li>
+        <li>
+          <a
+            class="dropdown-item d-flex align-items-center gap-2 py-2"
+            href="{% url 'list-autopart' %}"
+          >
+            <span
+              class="d-inline-block bg-info rounded-circle"
+              style="width: 0.5em; height: 0.5em"
+            ></span>
+            Просмотр деталей
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endif %}
+{% endblock %}

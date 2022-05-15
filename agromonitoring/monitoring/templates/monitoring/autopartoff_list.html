@@ -1,0 +1,38 @@
+{% extends "monitoring/base.html" %}
+
+{% block main %}
+<ul>
+{% for autopart in object_list %}
+ <!-- {% if autopart.status.status_code == 0 %} -->
+    <div class="card" style="width: 98%;">
+        <div class="card-body">
+         <a href="{% url 'list-autopart-off-detail' autopart.pk %}"> <h5 class="card-title text-success">{{ autopart.date_of_supply }} - {{ autopart.invent_number }} - {{ autopart.warehouse }} </h5></a>
+          <h6 class="card-subtitle">{{ autopart.name }}</h6>
+          <p class="card-text">{{ autopart.description }}</p>
+        </div>
+    </div>
+    <hr>
+  <!-- {% endif %}-->
+{% empty %}
+    <li>Нема жодної операції</li>
+{% endfor %}
+</ul>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; перша</a>
+            <a href="?page={{ page_obj.previous_page_number }}">попередня</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">наступна</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">остання &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

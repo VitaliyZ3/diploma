@@ -1,0 +1,16 @@
+{% extends 'authU/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Авторизация {% endblock %}
+
+{% block main %}
+
+<h1>Авторизация</h1>
+<div class="col-sm-12 col-md-8 col-md-offset-2 col-lg-6" >
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-primary" value="Sign in">
+</form>
+</div>
+{% endblock %}
