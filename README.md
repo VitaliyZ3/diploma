@@ -1,4 +1,4 @@
-# Accounting system "Новатор-Агро"
+# Accounting system for agricultural companies
 ### Data schema
 &ensp;
 ![](/images/product_accounting0.0.1.png "Диаграма классов")
