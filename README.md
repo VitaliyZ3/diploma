@@ -1,5 +1,5 @@
-# Система обліку "Новатор-Агро"
-### Схема даних для обліку
+# Accounting system "Новатор-Агро"
+### Data schema
 &ensp;
 ![](/images/product_accounting0.0.1.png "Диаграма классов")
 
